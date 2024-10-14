@@ -1,0 +1,26 @@
+<div class="course-list-container">
+  <h2>Course List</h2>
+
+  <!-- Input fields for adding a course -->
+  <input type="text" [(ngModel)]="courseName" placeholder="Enter course name">
+  <input type="text" [(ngModel)]="courseCode" placeholder="Enter course code">
+  <input type="text" [(ngModel)]="facilitator" placeholder="Enter professor name">
+
+  <!-- Button to add a course -->
+  <button (click)="addCourse()">Add Course</button>
+
+  <!-- Input field for searching courses -->
+  <input type="text" [(ngModel)]="searchTerm" placeholder="Search courses" (input)="searchCourses()">
+
+  <!-- Button to clear all courses -->
+  <button (click)="clearAll()">Clear All</button>
+
+
+  <ul>
+    <li *ngFor="let course of filteredCourses">
+   Course: {{ course.courseName }}<br> Code:  ({{ course.courseCode }})<br> facilitator:  {{ course.facilitator }}
+      <button (click)="removeCourse(course)">Remove</button>
+    </li>
+  </ul>
+</div>
+
