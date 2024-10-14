@@ -1,0 +1,22 @@
+<div class="fruit-list-container">
+  <h2>Fruit List</h2>
+
+  <!-- Input field for adding a fruit -->
+  <input type="text" [(ngModel)]="fruitName" placeholder="Enter fruit name">
+
+  <!-- Search input -->
+  <input type="text" [(ngModel)]="searchTerm" placeholder="Search fruits" (input)="filterFruits()">
+
+  <!-- Button to add a fruit -->
+  <button (click)="addFruit()">Add Fruit</button>
+  <button (click)="clearAll()">Clear All</button>
+
+  <!-- Fruit list display -->
+  <ul>
+    <li *ngFor="let fruit of filteredFruitList">
+      {{ fruit.name }}
+      <button (click)="removeFruit(fruit)">Remove</button>
+    </li>
+  </ul>
+</div>
+
