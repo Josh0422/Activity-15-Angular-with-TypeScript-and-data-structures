@@ -1,1 +1,23 @@
-<p>student-list works!</p>
+<div class="student-list-container">
+  <h2>Student List</h2>
+
+  <!-- Input fields for adding a student -->
+  <input type="text" [(ngModel)]="name" placeholder="Enter name">
+  <input type="text" [(ngModel)]="course" placeholder="Enter course">
+  <input type="text" [(ngModel)]="section" placeholder="Enter section">
+
+  <!-- Button to add a student -->
+  <button (click)="addItem()">Add Student</button>
+  <button (click)="clearAll()">Clear All</button>
+
+  <!-- Search input -->
+  <input type="text" [(ngModel)]="searchQuery" placeholder="Search by name">
+
+  <!-- Student list display -->
+  <ul>
+    <li *ngFor="let student of filteredStudentList">
+      {{ student.name }} - {{ student.course }} - {{ student.section }}
+      <button (click)="removeItem(student)">Remove</button>
+    </li>
+  </ul>
+</div>
