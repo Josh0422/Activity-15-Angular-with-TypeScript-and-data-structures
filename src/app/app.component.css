@@ -1,0 +1,24 @@
+.nav-container {
+  background-color: #e0ffff ; /* Dark background for the nav */
+  padding: 10px; /* Space around the nav */
+}
+
+.nav-bar {
+  display: flex; /* Use flexbox for horizontal alignment */
+  flex-wrap: wrap; /* Allow items to wrap onto the next line if needed */
+  justify-content: space-between; /* Even spacing between items */
+}
+
+.nav-bar a {
+  color: black; /* Text color */
+  text-decoration: none; /* Remove underline from links */
+  padding: 10px 15px; /* Space inside each link */
+  border: 1px solid #444; /* Border around each link */
+  border-radius: 4px; /* Slightly rounded corners */
+  margin: 5px; /* Margin between each link */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.nav-bar a:hover {
+  background-color: #0000ff; /* Darker background on hover */
+}
