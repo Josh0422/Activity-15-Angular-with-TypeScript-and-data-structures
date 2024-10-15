@@ -1,35 +1,25 @@
 <div class="car-model-list-container">
-  <p>Car Model List</p>
+  <h2>Car Model List</h2>
 
-  <!-- Search Input -->
-  <input
-    type="text"
-    [(ngModel)]="searchTerm"
-    placeholder="Search car model..."
-    (input)="searchCarModel()"
-  />
+  <!-- Input fields for adding a car model -->
+  <input type="text" [(ngModel)]="modelName" placeholder="Enter model name">
+  <input type="text" [(ngModel)]="brand" placeholder="Enter brand">
+  <input type="text" [(ngModel)]="year" placeholder="Enter year">
 
-  <!-- Add Car Model Inputs -->
-  <input
-    type="text"
-    [(ngModel)]="name"
-    placeholder="Enter car model name"
-    (keyup.enter)="addCarModel()"  <!-- Add on Enter key -->
-  />
-  <br />
+  <!-- Button to add a car model -->
   <button (click)="addCarModel()">Add Car Model</button>
-  <button (click)="clearAll()" [disabled]="carModelList.length === 0">Clear All</button>  <!-- Disable if list is empty -->
 
-  <!-- Car Model List -->
-  <ul *ngIf="filteredCarModelList.length > 0; else noResults">
-    <li *ngFor="let model of filteredCarModelList; let i = index">
-      {{ model }}
-      <button class="remove-btn" (click)="removeCarModel(i)">Remove</button>
+  <!-- Search input -->
+  <input type="text" [(ngModel)]="searchQuery" placeholder="Search car models">
+
+  <!-- Button to clear all car models -->
+  <button (click)="clearAllCarModels()">Clear All</button>
+
+  <!-- Car model list display -->
+  <ul>
+    <li *ngFor="let carModel of searchCarModel()">
+      {{ carModel.modelName }} - {{ carModel.brand }} - {{ carModel.year }}
+      <button (click)="removeCarModel(carModel)">Remove</button>
     </li>
   </ul>
-
-  <!-- No Results Message -->
-  <ng-template #noResults>
-    <p>No car models found.</p>
-  </ng-template>
 </div>

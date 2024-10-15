@@ -3,45 +3,53 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-car-model-list',
   templateUrl: './car-model-list.component.html',
-  styleUrls: ['./car-model-list.component.css'] // Corrected styleUrls key
+  styleUrls: ['./car-model-list.component.css']
 })
 export class CarModelListComponent {
-  carModelList: string[] = ['Toyota Camry', 'Honda Civic', 'Ford Mustang'];
-  filteredCarModelList: string[] = [...this.carModelList]; // Filtered list initialized
-  name: string = ''; // For adding a new car model
-  searchTerm: string = ''; // For searching car models
+  modelName: string = '';
+  brand: string = '';
+  year: string = '';
+  searchQuery: string = '';
 
-  // Add a new car model to the list
+  // Initial car model list
+  carModelList: { modelName: string, brand: string, year: string }[] = [
+    { modelName: 'Civic', brand: 'Honda', year: '2022' }
+  ];
+
+  // Method to add a car model to the list
   addCarModel() {
-    const trimmedName = this.name.trim();
-    if (trimmedName && !this.carModelList.includes(trimmedName)) {
-      this.carModelList.push(trimmedName);
-      this.filteredCarModelList = [...this.carModelList]; // Update the filtered list
-      this.name = ''; // Clear input field after adding
+    if (this.modelName && this.brand && this.year) {
+      const newCarModel = {
+        modelName: this.modelName.trim(),
+        brand: this.brand.trim(),
+        year: this.year.trim()
+      };
+      this.carModelList.push(newCarModel);
+
+      // Clear input fields after adding
+      this.modelName = '';
+      this.brand = '';
+      this.year = '';
     }
   }
 
-  // Remove a car model from the list by index
-  removeCarModel(index: number) {
-    this.carModelList.splice(index, 1);
-    this.filteredCarModelList = [...this.carModelList]; // Update the filtered list
+  // Method to remove a car model from the list
+  removeCarModel(carModel: { modelName: string, brand: string, year: string }) {
+    const index = this.carModelList.indexOf(carModel);
+    if (index !== -1) {
+      this.carModelList.splice(index, 1);
+    }
   }
 
-  // Clear all car models from the list
-  clearAll() {
-    this.carModelList = [];
-    this.filteredCarModelList = [];
-  }
-
-  // Search and filter the car models
+  // Method to search car models by name
   searchCarModel() {
-    const term = this.searchTerm.trim().toLowerCase();
-    if (term) {
-      this.filteredCarModelList = this.carModelList.filter(model =>
-        model.toLowerCase().includes(term)
-      );
-    } else {
-      this.filteredCarModelList = [...this.carModelList]; // Reset if search term is empty
-    }
+    return this.carModelList.filter(carModel =>
+      carModel.modelName.toLowerCase().includes(this.searchQuery.toLowerCase())
+    );
+  }
+
+  // Method to clear all car models from the list
+  clearAllCarModels() {
+    this.carModelList = [];
   }
 }
