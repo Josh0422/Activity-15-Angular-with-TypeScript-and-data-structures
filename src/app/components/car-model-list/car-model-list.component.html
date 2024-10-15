@@ -2,19 +2,34 @@
   <p>Car Model List</p>
 
   <!-- Search Input -->
-  <input type="text"  [(ngModel)]="searchTerm" placeholder="Search car model..." (input)="searchCarModel()" />
+  <input
+    type="text"
+    [(ngModel)]="searchTerm"
+    placeholder="Search car model..."
+    (input)="searchCarModel()"
+  />
 
   <!-- Add Car Model Inputs -->
-  <input type="text" [(ngModel)]="name" placeholder="Enter car model name" />
-  <br>
+  <input
+    type="text"
+    [(ngModel)]="name"
+    placeholder="Enter car model name"
+    (keyup.enter)="addCarModel()"  <!-- Add on Enter key -->
+  />
+  <br />
   <button (click)="addCarModel()">Add Car Model</button>
-  <button (click)="clearAll()">Clear All</button>
+  <button (click)="clearAll()" [disabled]="carModelList.length === 0">Clear All</button>  <!-- Disable if list is empty -->
 
   <!-- Car Model List -->
-  <ul>
+  <ul *ngIf="filteredCarModelList.length > 0; else noResults">
     <li *ngFor="let model of filteredCarModelList; let i = index">
       {{ model }}
       <button class="remove-btn" (click)="removeCarModel(i)">Remove</button>
     </li>
   </ul>
+
+  <!-- No Results Message -->
+  <ng-template #noResults>
+    <p>No car models found.</p>
+  </ng-template>
 </div>

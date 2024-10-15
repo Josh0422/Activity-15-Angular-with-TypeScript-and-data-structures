@@ -3,43 +3,45 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-car-model-list',
   templateUrl: './car-model-list.component.html',
-  styleUrl: './car-model-list.component.css'
+  styleUrls: ['./car-model-list.component.css'] // Corrected styleUrls key
 })
 export class CarModelListComponent {
   carModelList: string[] = ['Toyota Camry', 'Honda Civic', 'Ford Mustang'];
-  filteredCarModelList: string[] = [...this.carModelList];  // Initialize filtered list with all models
-  name: string = '';  // New car model name
-  searchTerm: string = '';  // Search term
+  filteredCarModelList: string[] = [...this.carModelList]; // Filtered list initialized
+  name: string = ''; // For adding a new car model
+  searchTerm: string = ''; // For searching car models
 
-  // Add a car model to the list
+  // Add a new car model to the list
   addCarModel() {
-    if (this.name.trim()) {
-      this.carModelList.push(this.name);
-      this.filteredCarModelList = [...this.carModelList];  // Update filtered list
-      this.name = '';  // Clear input field
+    const trimmedName = this.name.trim();
+    if (trimmedName && !this.carModelList.includes(trimmedName)) {
+      this.carModelList.push(trimmedName);
+      this.filteredCarModelList = [...this.carModelList]; // Update the filtered list
+      this.name = ''; // Clear input field after adding
     }
   }
 
-  // Remove a car model from the list
+  // Remove a car model from the list by index
   removeCarModel(index: number) {
     this.carModelList.splice(index, 1);
-    this.filteredCarModelList = [...this.carModelList];  // Update filtered list
+    this.filteredCarModelList = [...this.carModelList]; // Update the filtered list
   }
 
-  // Clear all car models
+  // Clear all car models from the list
   clearAll() {
     this.carModelList = [];
     this.filteredCarModelList = [];
   }
 
-  // Filter car models based on the search term
+  // Search and filter the car models
   searchCarModel() {
-    if (this.searchTerm.trim()) {
+    const term = this.searchTerm.trim().toLowerCase();
+    if (term) {
       this.filteredCarModelList = this.carModelList.filter(model =>
-        model.toLowerCase().includes(this.searchTerm.toLowerCase())
+        model.toLowerCase().includes(term)
       );
     } else {
-      this.filteredCarModelList = [...this.carModelList];  // Reset filtered list
+      this.filteredCarModelList = [...this.carModelList]; // Reset if search term is empty
     }
   }
 }
