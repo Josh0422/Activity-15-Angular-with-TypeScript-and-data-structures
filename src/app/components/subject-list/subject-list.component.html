@@ -1,0 +1,25 @@
+<div class="subject-list-container">
+  <h2>Subject List </h2>
+
+  <!-- Input fields for adding a subject -->
+  <input type="text" [(ngModel)]="subjectName" placeholder="Enter subject name">
+  <input type="text" [(ngModel)]="subjectCode" placeholder="Enter subject code">
+  <input type="text" [(ngModel)]="semester" placeholder="Enter semester">
+
+  <!-- Button to add a subject -->
+  <button (click)="addSubject()">Add Subject</button>
+  <button (click)="clearAll()">Clear All Subjects</button>
+
+  <!-- Search functionality -->
+  <input type="text" [(ngModel)]="searchQuery" placeholder="Search subjects">
+  <button (click)="searchSubjects()">Search</button>
+
+  <!-- Subject list display -->
+  <ul>
+    <li *ngFor="let subject of filteredSubjectList">
+     Subject: {{ subject.name }} <br>  Code: {{ subject.code }} <br> Semester:{{ subject.semester }}
+      <br>
+      <button (click)="removeSubject(subject)">Remove</button>
+    </li>
+  </ul>
+</div>
