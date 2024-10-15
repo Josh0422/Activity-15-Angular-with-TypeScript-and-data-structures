@@ -2,10 +2,10 @@
   <p>City List</p>
 
   <!-- Search Input -->
-  <input type="text" [(ngModel)]="searchTerm" placeholder="Search city..." (input)="searchCity()" />
 
-  <!-- Add City Inputs -->
+  <input type="text" [(ngModel)]="searchTerm" placeholder="Search city..." (input)="searchCity()" />
   <input type="text" [(ngModel)]="name" placeholder="Enter city name" />
+
   <br>
   <button (click)="addCity()">Add City</button>
   <button (click)="clearAll()">Clear All</button>
@@ -18,4 +18,3 @@
     </li>
   </ul>
 </div>
-
