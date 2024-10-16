@@ -1,0 +1,28 @@
+<div class="inventory-list-container">
+  <h2>Inventory List</h2>
+
+  <!-- Search input -->
+  <input
+    type="text"
+    [(ngModel)]="searchTerm"
+    placeholder="Search items..."
+    class="search-input"
+  />
+
+  <!-- Input fields for adding inventory items -->
+  <div class="input-group">
+    <input type="text" #itemName placeholder="Enter item name" class="input-field" />
+    <input type="number" #itemQuantity placeholder="Enter quantity" class="input-field" />
+    <button (click)="addItem(itemName.value, itemQuantity.valueAsNumber); itemName.value=''; itemQuantity.value=''" class="add-button">Add Item</button>
+    <button class="clear-button" (click)="clearAll()">Clear All</button>
+  </div>
+
+  <!-- Inventory list display -->
+  <ul class="item-list">
+    <li *ngFor="let item of filteredInventoryList()">
+      {{ item.name }} - Quantity: {{ item.quantity }}
+      <button (click)="removeItem(item)" class="remove-button">Remove</button>
+    </li>
+  </ul>
+</div>
+
