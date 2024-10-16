@@ -1,4 +1,4 @@
-/* Container for the entire contact list */
+
 .contact-list-container {
   background-color: #f7f9fc;
   padding: 25px;
@@ -9,7 +9,7 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Header style */
+
 h2 {
   text-align: center;
   color: #333;
@@ -19,7 +19,7 @@ h2 {
   letter-spacing: 2px;
 }
 
-/* Input fields for adding contacts */
+
 .input-field {
   display: block;
   width: 92%;
@@ -31,13 +31,13 @@ h2 {
   transition: border-color 0.3s ease;
 }
 
-/* Input focus styling */
+
 .input-field:focus {
   outline: none;
   border-color: #4a90e2;
 }
 
-/* General button styles */
+
 button {
   padding: 12px 18px;
   font-size: 1rem;
@@ -50,7 +50,7 @@ button {
   margin-right: 10px;
 }
 
-/* Add Contact button */
+
 .add-btn {
   background-color: #4caf50;
 }
@@ -59,7 +59,7 @@ button {
   background-color: #43a047;
 }
 
-/* Clear All button */
+
 .clear-btn {
   background-color: #f44336;
 }
@@ -68,7 +68,7 @@ button {
   background-color: #e53935;
 }
 
-/* Remove button for each contact */
+
 .remove-btn {
   background-color: #ff7043;
   padding: 6px 12px;
@@ -79,7 +79,7 @@ button {
   background-color: #f4511e;
 }
 
-/* List container styles */
+
 ul {
   list-style: none;
   padding: 0;
@@ -98,12 +98,12 @@ li {
   transition: background-color 0.3s ease;
 }
 
-/* Hover effect for list items */
+
 li:hover {
   background-color: #f1f1f1;
 }
 
-/* Search input field */
+
 .search-field {
   display: block;
   width: 92%;
@@ -119,7 +119,7 @@ li:hover {
   border-color: #4a90e2;
 }
 
-/* Mobile responsive design */
+
 @media (max-width: 600px) {
   .contact-list-container {
     padding: 15px;
