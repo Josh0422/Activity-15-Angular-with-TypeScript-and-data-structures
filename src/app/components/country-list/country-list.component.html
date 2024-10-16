@@ -1,0 +1,21 @@
+<div class="country-list-container">
+  <h2>Country List </h2>
+
+
+  <input type="text" [(ngModel)]="country" placeholder="Enter country name">
+  <input type="text" [(ngModel)]="continent" placeholder="Enter continent name">
+  <button (click)="addCountry()">Add Country</button>
+
+
+  <input type="text" [(ngModel)]="searchQuery" placeholder="Search by country or continent" (input)="searchCountry()">
+  <button (click)="clearAll()">Clear All</button>
+
+
+  <ul>
+    <li *ngFor="let country of filteredList">
+      {{ country.country }} - {{ country.continent }}
+      <button (click)="removeCountry(country)">Remove</button>
+    </li>
+  </ul>
+</div>
+
