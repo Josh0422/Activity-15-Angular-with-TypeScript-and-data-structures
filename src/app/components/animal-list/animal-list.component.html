@@ -1,0 +1,22 @@
+<div class="animal-list-container">
+  <h2>Animal List</h2>
+
+
+  <input type="text" [(ngModel)]="animalName" placeholder="Enter animal name">
+  <input type="text" [(ngModel)]="species" placeholder="Enter species">
+  <input type="text" [(ngModel)]="habitat" placeholder="Enter habitat">
+
+
+  <div class="button-container">
+    <button (click)="addAnimal()">Add Animal</button>
+    <button (click)="clearAll()">Clear All</button>
+  </div>
+
+
+  <ul>
+    <li *ngFor="let animal of animalList">
+      {{ animal.name }} - {{ animal.species }} - {{ animal.habitat }}
+      <button (click)="removeAnimal(animal)">Remove</button>
+    </li>
+  </ul>
+</div>
