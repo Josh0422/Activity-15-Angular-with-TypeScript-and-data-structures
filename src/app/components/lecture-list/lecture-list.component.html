@@ -1,0 +1,29 @@
+
+<div class="lecture-list-container">
+  <h2>Lecture List</h2>
+
+
+  <input
+    type="text"
+    [(ngModel)]="searchTerm"
+    placeholder="Search lectures..."
+    class="search-input"
+  />
+
+
+  <div class="input-group">
+    <input type="text" [(ngModel)]="title" placeholder="Enter lecture title" class="input-field" />
+    <input type="date" [(ngModel)]="date" class="input-field" />
+    <input type="time" [(ngModel)]="time" class="input-field" />
+    <button (click)="addLecture()" class="add-button">Add Lecture</button>
+    <button class="clear-button" (click)="clearAll()">Clear All</button>
+  </div>
+
+
+  <ul class="item-list">
+    <li *ngFor="let lecture of filteredLectureList">
+      {{ lecture.title }} - Date: {{ lecture.date }} - Time: {{ lecture.time }}
+      <button (click)="removeLecture(lecture)" class="remove-button">Remove</button>
+    </li>
+  </ul>
+</div>
