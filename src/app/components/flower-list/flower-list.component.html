@@ -1,0 +1,22 @@
+<div class="flower-list-container">
+  <h2>Flower List for the Wedding</h2>
+
+
+  <input type="text" [(ngModel)]="searchTerm" placeholder="Search flowers..." />
+
+
+  <div class="input-group">
+    <input type="text" [(ngModel)]="flowerName" placeholder="Enter flower name" />
+    <input type="text" [(ngModel)]="flowerType" placeholder="Enter flower type" />
+    <button (click)="addFlower()">Add Flower</button>
+    <button class="clear-button" (click)="clearAll()">Clear All</button>
+  </div>
+
+
+  <ul>
+    <li *ngFor="let flower of filteredFlowerList">
+      {{ flower.name }} - {{ flower.type }}
+      <button (click)="removeFlower(flower)">Remove</button>
+    </li>
+  </ul>
+</div>
