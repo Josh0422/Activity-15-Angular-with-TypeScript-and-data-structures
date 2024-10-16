@@ -1,0 +1,25 @@
+<div class="tool-list-container">
+  <h2>Tool List – List of tools used in a workshop</h2>
+
+
+  <input type="text" [(ngModel)]="toolName" placeholder="Enter tool name">
+  <input type="text" [(ngModel)]="toolType" placeholder="Enter tool type">
+  <input type="text" [(ngModel)]="toolDetails" placeholder="Enter tool details">
+
+
+  <button (click)="addTool()">Add Tool</button>
+
+
+  <input type="text" [(ngModel)]="searchQuery" placeholder="Search tools" (input)="searchTool()">
+
+
+  <button (click)="clearAll()">Clear All</button>
+
+
+  <ul>
+    <li *ngFor="let tool of searchTool()">
+      {{ tool.name }} - {{ tool.type }} - {{ tool.details }}
+      <button (click)="removeTool(tool)">Remove</button>
+    </li>
+  </ul>
+</div>
