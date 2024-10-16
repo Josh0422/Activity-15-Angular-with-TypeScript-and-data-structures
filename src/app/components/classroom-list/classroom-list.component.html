@@ -1,0 +1,53 @@
+<div class="classroom-list-container">
+  <h2>Classroom List</h2>
+
+
+  <input
+    type="text"
+    [(ngModel)]="searchTerm"
+    placeholder="Search students..."
+    class="search-input"
+  />
+
+
+  <div class="input-group">
+    <input
+      type="text"
+      [(ngModel)]="name"
+      placeholder="Enter student name"
+      class="input-field"
+    />
+    <input
+      type="text"
+      [(ngModel)]="course"
+      placeholder="Enter course"
+      class="input-field"
+    />
+    <input
+      type="text"
+      [(ngModel)]="section"
+      placeholder="Enter section"
+      class="input-field"
+    />
+    <button
+      (click)="addItem()"
+      class="add-button"
+    >
+      Add Student
+    </button>
+    <button
+      class="clear-button"
+      (click)="clearAll()"
+    >
+      Clear All
+    </button>
+  </div>
+
+
+  <ul class="student-list">
+    <li *ngFor="let student of filteredStudentList">
+      {{ student.name }} - {{ student.course }} - {{ student.section }}
+      <button (click)="removeItem(student)" class="remove-button">Remove</button>
+    </li>
+  </ul>
+</div>
