@@ -1,0 +1,25 @@
+<div class="game-list-container">
+  <h2>Game List</h2>
+
+  <!-- Input fields for adding a game -->
+  <input type="text" [(ngModel)]="gameTitle" placeholder="Enter game title">
+  <input type="text" [(ngModel)]="gameGenre" placeholder="Enter game genre">
+  <input type="text" [(ngModel)]="gamePlatform" placeholder="Enter game platform">
+
+  <!-- Button to add a game -->
+  <button (click)="addGame()">Add Game</button>
+
+  <!-- Search functionality -->
+  <input type="text" [(ngModel)]="searchTerm" placeholder="Search games" (input)="filterGames()">
+
+  <!-- Button to clear all games -->
+  <button (click)="clearAll()">Clear All</button>
+
+  <!-- Game list display -->
+  <ul>
+    <li *ngFor="let game of filteredGames">
+      {{ game.title }} - {{ game.genre }} - {{ game.platform }}
+      <button (click)="removeGame(game)">Remove</button>
+    </li>
+  </ul>
+</div>
