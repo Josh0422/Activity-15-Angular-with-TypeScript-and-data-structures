@@ -1,62 +1,62 @@
 .sports-list-container {
-  background-color: #f0f8ff; /* Light blue background */
-  border: 2px solid #3f51b5; /* Blue border */
-  border-radius: 8px; /* Rounded corners */
-  padding: 20px; /* Padding inside the container */
-  width: 300px; /* Fixed width for the container */
-  margin: auto; /* Center the container */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  background-color: #f0f8ff;
+  border: 2px solid #3f51b5;
+  border-radius: 8px;
+  padding: 20px;
+  width: 300px;
+  margin: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 h2 {
-  color: #3f51b5; /* Title color */
-  text-align: center; /* Center title */
+  color: #3f51b5;
+  text-align: center;
 }
 
 input[type="text"] {
-  width: 90%; /* Input width */
-  padding: 10px; /* Input padding */
-  margin: 10px 0; /* Margin around inputs */
-  border: 1px solid #3f51b5; /* Border color */
-  border-radius: 4px; /* Rounded corners */
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #3f51b5;
+  border-radius: 4px;
 }
 
 button {
-  background-color: #3f51b5; /* Button background color */
-  color: white; /* Button text color */
-  padding: 10px 15px; /* Button padding */
-  border: none; /* Remove default border */
-  border-radius: 4px; /* Rounded corners */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s; /* Smooth transition for hover */
-  width: 100%; /* Full-width buttons */
+  background-color: #3f51b5;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
 }
 
 button:hover {
-  background-color: #303f9f; /* Darker shade on hover */
+  background-color: #303f9f;
 }
 
 ul {
-  list-style-type: none; /* Remove bullets from list */
-  padding: 0; /* Remove padding */
+  list-style-type: none;
+  padding: 0;
 }
 
 li {
-  background-color: #e3f2fd; /* Light blue for list items */
-  margin: 5px 0; /* Margin between list items */
-  padding: 10px; /* Padding inside list items */
-  border-radius: 4px; /* Rounded corners */
-  display: flex; /* Flexbox for alignment */
-  justify-content: space-between; /* Space between sport name and button */
+  background-color: #e3f2fd;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .remove-button {
-  background-color: #ff4081; /* Pink background for remove button */
-  width: auto; /* Auto width for remove button */
-  padding: 5px 10px; /* Smaller padding for remove button */
+  background-color: #e92e3e;
+  width: auto;
+  padding: 5px 10px;
   margin-left: 10px;
 }
 
 .remove-button:hover {
-  background-color: #f50057;
+  background-color: #e26d77;
 }

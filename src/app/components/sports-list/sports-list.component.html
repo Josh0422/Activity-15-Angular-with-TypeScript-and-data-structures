@@ -1,19 +1,15 @@
 <div class="sports-list-container">
-  <h2>Sports List – List of Popular Sports</h2>
+  <h2>Sports List </h2>
 
-  <!-- Input field for adding a sport -->
+
   <input type="text" [(ngModel)]="sportName" placeholder="Enter sport name">
 
-  <!-- Button to add a sport -->
   <button (click)="addSport()">Add Sport</button>
 
-  <!-- Input field for searching sports -->
   <input type="text" [(ngModel)]="searchTerm" placeholder="Search sports" (input)="filterSports()">
 
-  <!-- Button to clear all sports -->
   <button (click)="clearAll()">Clear All</button>
 
-  <!-- Sports list display -->
   <ul>
     <li *ngFor="let sport of filteredSports" class="sport-item">
       <span>{{ sport }}</span>
