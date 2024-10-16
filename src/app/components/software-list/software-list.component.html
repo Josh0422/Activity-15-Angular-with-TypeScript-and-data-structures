@@ -1,0 +1,28 @@
+<div class="software-list-container">
+  <h2>Software List – List of Software Installed on a Computer</h2>
+
+
+  <div class="input-fields">
+    <input type="text" [(ngModel)]="softwareName" placeholder="Enter software name">
+    <input type="text" [(ngModel)]="publisher" placeholder="Enter publisher">
+  </div>
+
+  <button class="add-button" (click)="addSoftware()">Add Software</button>
+
+
+  <div class="search-container">
+    <input type="text" [(ngModel)]="searchQuery" placeholder="Search software..." (input)="filterSoftware()">
+    <button class="clear-button" (click)="clearSearch()">Clear Search</button>
+  </div>
+
+
+  <ul class="software-list">
+    <li *ngFor="let software of filteredSoftwareList">
+      {{ software.name }} -{{ software.publisher }}
+      <button class="remove-button" (click)="removeSoftware(software)">Remove</button>
+    </li>
+  </ul>
+
+
+  <button class="clear-all-button" (click)="clearAll()">Clear All</button>
+</div>
