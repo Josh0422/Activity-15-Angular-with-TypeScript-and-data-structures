@@ -1,0 +1,141 @@
+/* Container for the entire contact list */
+.contact-list-container {
+  background-color: #f7f9fc;
+  padding: 25px;
+  border-radius: 12px;
+  max-width: 650px;
+  margin: 30px auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header style */
+h2 {
+  text-align: center;
+  color: #333;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Input fields for adding contacts */
+.input-field {
+  display: block;
+  width: 92%;
+  padding: 12px;
+  margin: 12px auto;
+  font-size: 1rem;
+  border: 2px solid #d3d3d3;
+  border-radius: 6px;
+  transition: border-color 0.3s ease;
+}
+
+/* Input focus styling */
+.input-field:focus {
+  outline: none;
+  border-color: #4a90e2;
+}
+
+/* General button styles */
+button {
+  padding: 12px 18px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 10px;
+}
+
+/* Add Contact button */
+.add-btn {
+  background-color: #4caf50;
+}
+
+.add-btn:hover {
+  background-color: #43a047;
+}
+
+/* Clear All button */
+.clear-btn {
+  background-color: #f44336;
+}
+
+.clear-btn:hover {
+  background-color: #e53935;
+}
+
+/* Remove button for each contact */
+.remove-btn {
+  background-color: #ff7043;
+  padding: 6px 12px;
+  font-size: 0.875rem;
+}
+
+.remove-btn:hover {
+  background-color: #f4511e;
+}
+
+/* List container styles */
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 25px;
+}
+
+li {
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for list items */
+li:hover {
+  background-color: #f1f1f1;
+}
+
+/* Search input field */
+.search-field {
+  display: block;
+  width: 92%;
+  padding: 12px;
+  margin: 20px auto;
+  font-size: 1rem;
+  border: 2px solid #d3d3d3;
+  border-radius: 6px;
+}
+
+.search-field:focus {
+  outline: none;
+  border-color: #4a90e2;
+}
+
+/* Mobile responsive design */
+@media (max-width: 600px) {
+  .contact-list-container {
+    padding: 15px;
+  }
+  .input-field, .search-field {
+    width: 100%;
+  }
+  button {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .remove-btn {
+    margin-top: 10px;
+  }
+}

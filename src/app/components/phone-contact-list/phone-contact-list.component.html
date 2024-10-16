@@ -1,0 +1,25 @@
+<div class="contact-list-container">
+  <h2>Phone Contact List</h2>
+
+  <!-- Input fields for adding a contact -->
+  <input type="text" [(ngModel)]="name" placeholder="Enter name" class="input-field">
+  <input type="text" [(ngModel)]="phone" placeholder="Enter phone" class="input-field">
+  <input type="text" [(ngModel)]="email" placeholder="Enter email" class="input-field">
+
+  <!-- Button to add a contact -->
+  <button (click)="addContact()" class="add-btn">Add Contact</button>
+
+  <!-- Button to clear all contacts -->
+  <button (click)="clearAll()" class="clear-btn">Clear All</button>
+
+  <!-- Search input -->
+  <input type="text" placeholder="Search contact" #searchBox (input)="searchContact(searchBox.value)" class="search-field">
+
+  <!-- Contact list display -->
+  <ul>
+    <li *ngFor="let contact of contactList">
+      {{ contact.name }} - {{ contact.phone }} - {{ contact.email }}
+      <button (click)="removeContact(contact)" class="remove-btn">Remove</button>
+    </li>
+  </ul>
+</div>
