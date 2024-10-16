@@ -13,21 +13,21 @@ export class GroceryListComponent {
     { name: 'Potato', quantity: 3},
   ];
 
-  searchTerm: string = ''; // Property for the search term
+  searchTerm: string = '';
 
-  // Method to add a new grocery item
+
   addItem(name: string, quantity: number | null) {
     if (name && quantity !== null) {
       this.groceryList.push({ name: name.trim(), quantity });
     }
   }
 
-  // Method to clear all grocery items
+
   clearAll() {
     this.groceryList = [];
   }
 
-  // Method to remove a grocery item
+
   removeItem(item: { name: string; quantity: number | null }) {
     const index = this.groceryList.indexOf(item);
     if (index !== -1) {
@@ -35,7 +35,7 @@ export class GroceryListComponent {
     }
   }
 
-  // Getter for filtered grocery items
+
   get filteredGroceryList() {
     return this.groceryList.filter(item =>
       item.name.toLowerCase().includes(this.searchTerm.toLowerCase())
