@@ -1,0 +1,24 @@
+<div class="vegetable-list-container">
+  <h2>Vegetable List</h2>
+
+
+  <input type="text" [(ngModel)]="name" placeholder="Enter vegetable name">
+  <input type="text" [(ngModel)]="type" placeholder="Enter vegetable type">
+
+
+  <div class="button-container">
+    <button (click)="addVegetable()">Add Vegetable</button>
+    <button (click)="clearAll()">Clear All</button>
+  </div>
+
+
+  <input type="text" #searchBox placeholder="Search vegetable" (input)="searchTerm = searchBox.value">
+
+
+  <ul>
+    <li *ngFor="let vegetable of searchVegetable(searchTerm || '')">
+      {{ vegetable.name }} - {{ vegetable.type }}
+      <button (click)="removeVegetable(vegetable)">Remove</button>
+    </li>
+  </ul>
+</div>
