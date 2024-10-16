@@ -1,0 +1,26 @@
+<div class="grocery-list-container">
+  <h2>Grocery List</h2>
+
+  <!-- Search input -->
+  <input
+    type="text"
+    [(ngModel)]="searchTerm"
+    placeholder="Search items..."
+  />
+
+  <!-- Input fields for adding grocery items -->
+  <div class="input-group">
+    <input type="text" #name placeholder="Enter item name" />
+    <input type="number" #quantity placeholder="Enter quantity" />
+    <button (click)="addItem(name.value, quantity.valueAsNumber); name.value=''; quantity.value=''">Add Item</button>
+    <button class="clear-button" (click)="clearAll()">Clear All</button>
+  </div>
+
+  <!-- Grocery list display -->
+  <ul>
+    <li *ngFor="let item of filteredGroceryList">
+      {{ item.name }} - Quantity: {{ item.quantity }}
+      <button (click)="removeItem(item)">Remove</button>
+    </li>
+  </ul>
+</div>
