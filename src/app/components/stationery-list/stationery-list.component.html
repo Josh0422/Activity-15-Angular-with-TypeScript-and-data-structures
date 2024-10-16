@@ -1,0 +1,36 @@
+<div class="stationery-list-container">
+  <h2>Stationery List</h2>
+
+
+  <input
+    type="text"
+    [(ngModel)]="searchTerm"
+    placeholder="Search stationery items..."
+    class="search-input"
+  />
+
+
+  <div class="input-group">
+    <input
+      type="text"
+      [(ngModel)]="stationeryName"
+      placeholder="Enter stationery name"
+      class="input-field"
+    />
+    <input
+      type="number"
+      [(ngModel)]="stationeryQuantity"
+      placeholder="Enter quantity"
+      class="input-field"
+    />
+    <button (click)="addItem()" class="add-button">Add Item</button>
+    <button (click)="clearAll()" class="clear-button">Clear All</button>
+  </div>
+
+  <ul class="stationery-list">
+    <li *ngFor="let item of filteredStationeryList">
+      {{ item.name }} - Quantity: {{ item.quantity }}
+      <button (click)="removeItem(item)" class="remove-button">Remove</button>
+    </li>
+  </ul>
+</div>
