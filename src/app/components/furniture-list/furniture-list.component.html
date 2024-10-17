@@ -1,0 +1,24 @@
+<div class="furniture-list-container">
+  <h2>Furniture List</h2>
+
+
+  <input type="text" [(ngModel)]="searchTerm" class="search-input" placeholder="Search furniture..." />
+
+
+  <div class="input-group">
+    <input type="text" #name class="input-field" placeholder="Enter furniture name" />
+    <input type="text" #description class="input-field" placeholder="Enter description" />
+    <button (click)="addFurniture(name.value, description.value); name.value=''; description.value=''" class="add-button">
+      Add Furniture
+    </button>
+    <button class="clear-button" (click)="clearAll()">Clear All</button>
+  </div>
+
+
+  <ul class="furniture-list">
+    <li *ngFor="let furniture of filteredFurnitureList" class="furniture-item">
+      {{ furniture.name }} - {{ furniture.description }}
+      <button (click)="removeFurniture(furniture)" class="remove-button">Remove</button>
+    </li>
+  </ul>
+</div>
