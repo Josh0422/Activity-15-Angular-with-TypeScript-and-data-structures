@@ -1,0 +1,24 @@
+<div class="tv-show-list-container">
+  <h2>TV Show List</h2>
+
+  <!-- Search input -->
+  <input type="text" [(ngModel)]="searchTerm" class="search-input" placeholder="Search shows..." />
+
+  <!-- Input fields for adding a TV show -->
+  <div class="input-group">
+    <input type="text" #title class="input-field" placeholder="Enter TV show title" />
+    <input type="text" #genre class="input-field" placeholder="Enter genre" />
+    <button (click)="addTVShow(title.value, genre.value); title.value=''; genre.value=''" class="add-button">
+      Add TV Show
+    </button>
+    <button class="clear-button" (click)="clearAll()">Clear All</button>
+  </div>
+
+  <!-- TV show list display -->
+  <ul class="tv-show-list">
+    <li *ngFor="let show of filteredTVShowList" class="tv-show-item">
+      {{ show.title }} - {{ show.genre }}
+      <button (click)="removeTVShow(show)" class="remove-button">Remove</button>
+    </li>
+  </ul>
+</div>
