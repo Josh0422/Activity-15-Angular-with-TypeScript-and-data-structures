@@ -1,0 +1,23 @@
+<div class="laptop-list-container">
+  <h2>Laptop Specifications List</h2>
+
+  <!-- Search input -->
+  <input type="text" [(ngModel)]="searchTerm" placeholder="Search laptops..." class="search-input" />
+
+  <!-- Input fields for adding laptop specifications -->
+  <div class="input-group">
+    <input type="text" #name placeholder="Enter laptop model" class="input-field" />
+    <input type="text" #processor placeholder="Enter processor type" class="input-field" />
+    <input type="number" #ram placeholder="Enter RAM (GB)" class="input-field" />
+    <button (click)="addLaptop(name.value, processor.value, ram.valueAsNumber); name.value=''; processor.value=''; ram.value=''" class="add-button">Add Laptop</button>
+    <button class="clear-button" (click)="clearAll()">Clear All</button>
+  </div>
+
+  <!-- Laptop list display -->
+  <ul class="laptop-list">
+    <li *ngFor="let laptop of filteredLaptopList" class="laptop-item">
+      <span>{{ laptop.name }} - Processor: {{ laptop.processor }} - RAM: {{ laptop.ram }}GB</span>
+      <button (click)="removeLaptop(laptop)" class="remove-button">Remove</button>
+    </li>
+  </ul>
+</div>

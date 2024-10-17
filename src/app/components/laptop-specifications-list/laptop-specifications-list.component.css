@@ -1,0 +1,150 @@
+/* Main container for laptop list */
+.laptop-list-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #ffffff; /* Pure white background */
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Softer shadow for depth */
+  border: 1px solid #e6e6e6; /* Light border for structure */
+}
+
+/* Title styling */
+h2 {
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 25px;
+  font-size: 24px; /* Larger font for better hierarchy */
+  border-bottom: 2px solid #007bff; /* Subtle underline for emphasis */
+  padding-bottom: 10px;
+}
+
+/* Form input group */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+/* Input fields */
+.input-field {
+  padding: 12px;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  font-size: 16px;
+  width: 100%;
+  transition: border-color 0.3s ease;
+}
+
+.input-field:focus {
+  border-color: #007bff; /* Blue border on focus */
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.2); /* Subtle focus effect */
+}
+
+/* Buttons */
+.add-button, .clear-button {
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-button {
+  background-color: #007bff; /* Primary blue color */
+  color: white;
+  margin-top: 15px;
+}
+
+.clear-button {
+  background-color: #dc3545; /* Red color for clearing */
+  color: white;
+}
+
+.add-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.clear-button:hover {
+  background-color: #c82333; /* Darker red on hover */
+}
+
+/* List of laptops */
+.laptop-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Individual laptop item styling */
+.laptop-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f9fa; /* Light gray for contrast */
+  border: 1px solid #dddddd; /* Light gray border */
+  padding: 12px 15px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05); /* Gentle shadow for depth */
+}
+
+.laptop-item:hover {
+  background-color: #ffffff; /* Subtle hover effect */
+  border-color: #007bff; /* Blue border on hover */
+}
+
+/* Remove button inside list item */
+.remove-button {
+  background-color: #dc3545; /* Red for remove */
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.remove-button:hover {
+  background-color: #c82333; /* Darker red on hover */
+}
+
+/* Search input field */
+.search-input {
+  padding: 12px;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 25px;
+  transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #007bff; /* Blue border on focus */
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.2); /* Focus effect */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .input-group {
+    gap: 8px;
+  }
+
+  .add-button, .clear-button {
+    width: 100%;
+    margin-top: 12px;
+  }
+
+  .laptop-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
