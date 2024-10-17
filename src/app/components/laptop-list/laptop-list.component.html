@@ -1,0 +1,45 @@
+<div class="laptop-list-container">
+  <h2>Laptop List</h2>
+
+
+  <input
+    type="text"
+    [(ngModel)]="searchTerm"
+    placeholder="Search laptops..."
+    class="search-input"
+  />
+
+
+  <div class="input-group">
+    <input
+      type="text"
+      [(ngModel)]="laptopModel"
+      placeholder="Enter laptop model"
+      class="input-model"
+    />
+    <input
+      type="text"
+      [(ngModel)]="brand"
+      placeholder="Enter brand"
+      class="input-brand"
+    />
+    <input
+      type="number"
+      [(ngModel)]="price"
+      placeholder="Enter price"
+      class="input-price"
+    />
+    <button (click)="addLaptop()" class="add-button">Add Laptop</button>
+    <button (click)="clearAll()" class="clear-button">Clear All</button>
+  </div>
+
+
+  <ul>
+    <li *ngFor="let laptop of filteredLaptopList()">
+      <span>{{ laptop.model }} - {{ laptop.brand }} - ₱ {{ laptop.price }}</span>
+      <button (click)="removeLaptop(laptop)" class="remove-button">
+        Remove
+      </button>
+    </li>
+  </ul>
+</div>
