@@ -1,10 +1,10 @@
 <div class="computer-hardware-list-container">
   <h2>Computer Hardware List</h2>
 
-  <!-- Search input -->
-  <input type="text" [(ngModel)]="searchTerm" class="search-input" placeholder="Search components..." />
 
-  <!-- Input fields for adding a hardware component -->
+  <input type="text" [(ngModel)]="searchTerm" class="search-input" placeholder="Search Hardware..." />
+
+
   <div class="input-group">
     <input type="text" #name class="input-field" placeholder="Enter hardware name" />
     <input type="text" #specs class="input-field" placeholder="Enter specifications" />
@@ -14,7 +14,7 @@
     <button class="clear-button" (click)="clearAll()">Clear All</button>
   </div>
 
-  <!-- Hardware list display -->
+
   <ul class="computer-hardware-list">
     <li *ngFor="let component of filteredHardwareList" class="hardware-item">
       {{ component.name }} - {{ component.specs }}

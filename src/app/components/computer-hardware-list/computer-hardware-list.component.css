@@ -1,5 +1,5 @@
 .computer-hardware-list-container {
-  max-width: 800px;
+  max-width: 500px;
   margin: 20px auto;
   padding: 20px;
   background-color: #ffffff;
@@ -111,7 +111,7 @@ h2 {
   background-color: #c82333;
 }
 
-/* Responsive styling */
+
 @media (max-width: 600px) {
   .computer-hardware-list-container {
     padding: 15px;
