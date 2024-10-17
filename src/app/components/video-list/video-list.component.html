@@ -1,0 +1,24 @@
+<div class="video-list-container">
+  <h2>Video Library</h2>
+
+
+  <input type="text" [(ngModel)]="searchTerm" class="search-input" placeholder="Search videos..." />
+
+
+  <div class="input-group">
+    <input type="text" #title class="input-field" placeholder="Enter video title" />
+    <input type="text" #genre class="input-field" placeholder="Enter genre" />
+    <button (click)="addVideo(title.value, genre.value); title.value=''; genre.value=''" class="add-button">
+      Add Video
+    </button>
+    <button class="clear-button" (click)="clearAll()">Clear All</button>
+  </div>
+
+
+  <ul class="video-list">
+    <li *ngFor="let video of filteredVideoList" class="video-item">
+      {{ video.title }} - {{ video.genre }}
+      <button (click)="removeVideo(video)" class="remove-button">Remove</button>
+    </li>
+  </ul>
+</div>
