@@ -1,0 +1,24 @@
+<div class="mobile-app-list-container">
+  <h2>Mobile App List</h2>
+
+  <!-- Search input -->
+  <input type="text" [(ngModel)]="searchTerm" class="search-input" placeholder="Search apps..." />
+
+  <!-- Input fields for adding an app -->
+  <div class="input-group">
+    <input type="text" #name class="input-field" placeholder="Enter app name" />
+    <input type="text" #version class="input-field" placeholder="Enter app version" />
+    <button (click)="addApp(name.value, version.value); name.value=''; version.value=''" class="add-button">
+      Add App
+    </button>
+    <button class="clear-button" (click)="clearAll()">Clear All</button>
+  </div>
+
+  <!-- App list display -->
+  <ul class="mobile-app-list">
+    <li *ngFor="let app of filteredAppList" class="app-item">
+      {{ app.name }} - {{ app.version }}
+      <button (click)="removeApp(app)" class="remove-button">Remove</button>
+    </li>
+  </ul>
+</div>
