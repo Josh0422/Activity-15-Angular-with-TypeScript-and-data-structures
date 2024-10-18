@@ -1,0 +1,73 @@
+.painting-list-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Georgia', serif;
+}
+
+h2 {
+  text-align: center;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.input-painting, .search-bar {
+  width: calc(100% - 100px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: 'Georgia', serif;
+}
+
+.add-btn, .remove-btn, .clear-btn {
+  padding: 10px 15px;
+  margin-left: 10px;
+  background-color: #1d72b8;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.add-btn:hover, .remove-btn:hover, .clear-btn:hover {
+  background-color: #165a91;
+}
+
+.painting-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.painting-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #fff;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.remove-btn {
+  background-color: #e63946;
+}
+
+.clear-btn {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  background-color: #32cd32;
+}
+
+.clear-btn:hover {
+  background-color: #e0a800;
+}
