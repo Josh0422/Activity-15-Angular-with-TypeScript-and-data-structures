@@ -1,0 +1,30 @@
+<div class="composer-list-container">
+  <h2> Composers list</h2>
+
+
+  <input
+    type="text"
+    [(ngModel)]="searchQuery"
+    placeholder="Search composers..."
+    class="search-bar"
+  />
+
+
+  <input
+    type="text"
+    [(ngModel)]="newComposer"
+    placeholder="Add a new composer..."
+    class="input-composer"
+  />
+  <button (click)="addComposer()" class="add-btn">Add</button>
+
+
+  <ul class="composer-list">
+    <li *ngFor="let composer of searchComposers()">
+      {{ composer }}
+      <button (click)="removeComposer(composer)" class="remove-btn">Remove</button>
+    </li>
+  </ul>
+
+  <button (click)="clearAll()" class="clear-btn">Clear All</button>
+</div>
