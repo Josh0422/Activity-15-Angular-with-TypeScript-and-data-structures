@@ -1,0 +1,23 @@
+<!-- accessory-list.component.html -->
+<div class="container">
+  <h2>Mobile Accessories List</h2>
+
+  <div class="form">
+    <input type="text" placeholder="Accessory Name" #name>
+    <input type="text" placeholder="Accessory Type" #type>
+    <input type="number" placeholder="Price" #price>
+    <button (click)="addAccessory(name.value, type.value, price.value)">Add Accessory</button>
+  </div>
+
+  <div class="search-bar">
+    <input type="text" placeholder="Search accessories" [(ngModel)]="searchQuery" (input)="searchAccessory()">
+    <button (click)="clearAll()">Clear All</button>
+  </div>
+
+  <ul>
+    <li *ngFor="let accessory of accessories">
+      <span>{{ accessory.name }} - {{ accessory.type }} (₱ {{ accessory.price }})</span>
+      <button (click)="removeAccessory(accessory.id)">Remove</button>
+    </li>
+  </ul>
+</div>
