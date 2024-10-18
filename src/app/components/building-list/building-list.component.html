@@ -1,0 +1,38 @@
+<div class="building-list-container">
+  <h2>Buildings</h2>
+
+
+  <input
+    type="text"
+    [(ngModel)]="searchQuery"
+    placeholder="Search buildings or locations..."
+    class="search-bar"
+  />
+
+
+  <input
+    type="text"
+    [(ngModel)]="newLocation"
+    placeholder="Enter location..."
+    class="input-location"
+  />
+  <input
+    type="text"
+    [(ngModel)]="newBuilding"
+    placeholder="Add a new building..."
+    class="input-building"
+  />
+  <br>
+  <button (click)="addBuilding()" class="add-btn">Add</button>
+
+  <button (click)="clearAll()" class="clear-btn">Clear All</button>
+  <ul class="building-list">
+    <li *ngFor="let building of searchBuildings()">
+      <span>{{ building.location }} - {{ building.name }}</span>
+      <button (click)="removeBuilding(building)" class="remove-btn">Remove</button>
+    </li>
+  </ul>
+
+
+
+</div>
