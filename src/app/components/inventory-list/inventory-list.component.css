@@ -1,4 +1,4 @@
-/* Main container styling */
+
 .inventory-list-container {
   width: 90%;
   max-width: 700px;
@@ -10,7 +10,7 @@
   font-family: 'Arial', sans-serif;
 }
 
-/* Header styling */
+
 h2 {
   text-align: center;
   font-size: 2rem;
@@ -18,7 +18,7 @@ h2 {
   margin-bottom: 1.5rem;
 }
 
-/* Search input styling */
+
 .search-input {
   width: 100%;
   padding: 12px;
@@ -34,7 +34,7 @@ h2 {
   outline: none;
 }
 
-/* Input group styling */
+
 .input-group {
   display: flex;
   justify-content: space-between;
@@ -60,7 +60,7 @@ h2 {
   outline: none;
 }
 
-/* Button styling */
+
 .add-button,
 .clear-button {
   padding: 12px 20px;
@@ -93,7 +93,7 @@ h2 {
   transform: translateY(-2px);
 }
 
-/* Item list styling */
+
 .item-list {
   list-style-type: none;
   padding: 0;
@@ -115,7 +115,7 @@ h2 {
   background-color: #f8f9fa;
 }
 
-/* Remove button styling */
+
 .remove-button {
   padding: 6px 12px;
   border: none;
@@ -131,7 +131,7 @@ h2 {
   background-color: #e0a800;
 }
 
-/* Responsive design */
+
 @media (max-width: 768px) {
   .input-group {
     flex-direction: column;
