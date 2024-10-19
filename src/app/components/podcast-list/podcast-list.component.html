@@ -1,0 +1,33 @@
+<div class="container">
+  <h2>Podcast Episodes</h2>
+
+  <!-- Input to add a new podcast episode title -->
+  <input
+    type="text"
+    [(ngModel)]="newEpisodeTitle"
+    placeholder="Enter podcast title"
+    class="input-field"
+  />
+
+  <!-- Input to add a new podcast episode number -->
+  <input
+    type="number"
+    [(ngModel)]="newEpisodeNumber"
+    placeholder="Enter episode number"
+    class="input-field"
+  />
+
+  <button (click)="addEpisode()" class="btn-add">Add Episode</button>
+
+  <!-- Display the list of podcast episodes -->
+  <ul class="episode-list">
+    <li *ngFor="let episode of podcastEpisodes; let i = index" class="episode-item">
+      <!-- Display both title and episode number -->
+      Episode {{ episode.episodeNumber }}: {{ episode.title }}
+      <button (click)="removeEpisode(i)" class="btn-remove">Remove</button>
+    </li>
+  </ul>
+
+  <!-- Clear all episodes button -->
+  <button (click)="clearAllEpisodes()" class="btn-clear">Clear All</button>
+</div>
