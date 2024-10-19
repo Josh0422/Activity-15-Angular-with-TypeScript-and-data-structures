@@ -1,0 +1,30 @@
+<div class="container">
+  <h2>Workout Routine</h2>
+
+  <!-- Input fields para sa bagong ehersisyo -->
+  <input
+    type="text"
+    [(ngModel)]="newExerciseName"
+    placeholder="Exercise name"
+    class="input-field"
+  />
+  <input
+    type="number"
+    [(ngModel)]="newExerciseQuantity"
+    placeholder="Quantity (sets/reps)"
+    class="input-field"
+  />
+
+  <button (click)="addExercise()" class="btn-add">Add Exercise</button>
+
+  <!-- Display ng listahan ng mga ehersisyo -->
+  <ul class="exercise-list">
+    <li *ngFor="let exercise of exerciseList; let i = index" class="exercise-item">
+      {{ exercise.name }} - {{ exercise.quantity }}
+      <button (click)="removeExercise(i)" class="btn-remove">Remove</button>
+    </li>
+  </ul>
+
+  <!-- Clear all exercises button -->
+  <button (click)="clearAllExercises()" class="btn-clear">Clear All</button>
+</div>
