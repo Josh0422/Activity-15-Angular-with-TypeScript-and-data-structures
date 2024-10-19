@@ -1,0 +1,19 @@
+<div class="container">
+  <h2>Developer Tools</h2>
+
+  <input type="text" [(ngModel)]="newToolName" class="input-field" placeholder="Enter tool name">
+  <input type="text" [(ngModel)]="newToolType" class="input-field" placeholder="Enter tool type">
+
+  <div class="button-group">
+    <button class="btn-add" (click)="addTool()">Add Tool</button>
+  </div>
+
+  <input type="text" [(ngModel)]="searchKeyword" class="input-field" placeholder="Search tool...">
+
+  <ul class="tools-list">
+    <li class="tool-item" *ngFor="let tool of getFilteredTools(); let i = index">
+      <span>{{ tool.name }} - {{ tool.type }}</span>
+      <button class="btn-remove" (click)="removeTool(i)">Remove</button>
+    </li>
+  </ul>
+</div>
