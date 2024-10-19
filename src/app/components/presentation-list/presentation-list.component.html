@@ -1,0 +1,19 @@
+<div class="container">
+  <h2>Presentation Topics</h2>
+
+  <input type="text" [(ngModel)]="newPresentationTopic" class="input-field" placeholder="Enter presentation topic">
+
+  <div class="button-group">
+    <button class="btn-add" (click)="addPresentation()">Add Topic</button>
+    <button class="btn-clear" (click)="clearAllPresentations()">Clear All</button>
+  </div>
+
+  <input type="text" [(ngModel)]="searchKeyword" class="input-field" placeholder="Search topic...">
+
+  <ul class="presentation-list">
+    <li class="presentation-item" *ngFor="let presentation of getFilteredPresentations(); let i = index">
+      <span>{{ presentation.topic }}</span>
+      <button class="btn-remove" (click)="removePresentation(i)">Remove</button>
+    </li>
+  </ul>
+</div>
