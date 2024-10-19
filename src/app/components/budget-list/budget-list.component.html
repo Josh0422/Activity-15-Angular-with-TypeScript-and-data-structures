@@ -1,0 +1,46 @@
+<div class="container">
+  <h2>Project Budget List</h2>
+
+  <!-- Input fields para sa bagong budget item -->
+  <input
+    type="text"
+    [(ngModel)]="newBudgetName"
+    placeholder="Budget item name"
+    class="input-field"
+  />
+  <input
+    type="text"
+    [(ngModel)]="newBudgetCategory"
+    placeholder="Category"
+    class="input-field"
+  />
+  <input
+    type="number"
+    [(ngModel)]="newBudgetAmount"
+    placeholder="Amount"
+    class="input-field"
+  />
+  <button (click)="addBudgetItem()" class="btn-add">Add Budget Item</button>
+
+  <!-- Search bar para sa paghahanap ng budget items -->
+  <h3>Search Budget Items</h3>
+  <input
+    type="text"
+    [(ngModel)]="searchKeyword"
+    placeholder="Search by name or category"
+    class="input-field"
+  />
+  <button (click)="searchBudgetItem()" class="btn-search">Search</button>
+  <button (click)="clearSearch()" class="btn-clear-search">Clear Search</button>
+
+  <!-- Display ng search results o budget list -->
+  <ul class="budget-list">
+    <li *ngFor="let item of searchResults; let i = index" class="budget-item">
+      {{ item.name }} ({{ item.category }}) - ₱{{ item.amount }}
+      <button (click)="removeBudgetItem(i)" class="btn-remove">Remove</button>
+    </li>
+  </ul>
+
+  <!-- Clear all budget items button -->
+  <button (click)="clearAllBudgetItems()" class="btn-clear">Clear All</button>
+</div>
