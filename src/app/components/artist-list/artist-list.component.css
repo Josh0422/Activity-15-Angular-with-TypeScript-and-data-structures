@@ -1,7 +1,7 @@
 .artist-list-container {
   max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
+  margin: 0 auto 0;
+  padding: 10px;
   background-color: #f4f4f4;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

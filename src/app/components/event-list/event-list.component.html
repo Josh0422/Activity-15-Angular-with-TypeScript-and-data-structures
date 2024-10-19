@@ -1,0 +1,19 @@
+<div class="container">
+  <h2>Upcoming Events</h2>
+
+  <input type="text" [(ngModel)]="newEventName" class="input-field" placeholder="Enter event name">
+  <input type="date" [(ngModel)]="newEventDate" class="input-field">
+
+  <div class="button-group">
+    <button class="btn-add" (click)="addEvent()">Add Event</button>
+  </div>
+
+  <input type="text" [(ngModel)]="searchKeyword" class="input-field" placeholder="Search event...">
+
+  <ul class="event-list">
+    <li class="event-item" *ngFor="let event of getFilteredEvents(); let i = index">
+      <span>{{ event.name }} - {{ event.date }}</span>
+      <button class="btn-remove" (click)="removeEvent(i)">Remove</button>
+    </li>
+  </ul>
+</div>

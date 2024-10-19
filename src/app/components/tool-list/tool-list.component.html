@@ -1,5 +1,5 @@
 <div class="tool-list-container">
-  <h2>Tool List – List of tools used in a workshop</h2>
+  <h2>Tool List</h2>
 
 
   <input type="text" [(ngModel)]="toolName" placeholder="Enter tool name">
@@ -18,7 +18,7 @@
 
   <ul>
     <li *ngFor="let tool of searchTool()">
-      {{ tool.name }} - {{ tool.type }} - {{ tool.details }}
+    NAME:  {{ tool.name }}  <br> TYPE:{{ tool.type }} <br> DETAILS: {{ tool.details }}
       <button (click)="removeTool(tool)">Remove</button>
     </li>
   </ul>
