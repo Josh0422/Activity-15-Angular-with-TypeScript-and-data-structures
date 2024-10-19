@@ -1,0 +1,19 @@
+<div class="container">
+  <h2>Frameworks</h2>
+
+  <input type="text" [(ngModel)]="newFrameworkName" class="input-field" placeholder="Enter framework name">
+  <input type="text" [(ngModel)]="newFrameworkLanguage" class="input-field" placeholder="Enter programming language">
+
+  <div class="button-group">
+    <button class="btn-add" (click)="addFramework()">Add Framework</button>
+  </div>
+
+  <input type="text" [(ngModel)]="searchKeyword" class="input-field" placeholder="Search framework...">
+
+  <ul class="frameworks-list">
+    <li class="framework-item" *ngFor="let framework of getFilteredFrameworks(); let i = index">
+      <span>{{ framework.name }} - {{ framework.language }}</span>
+      <button class="btn-remove" (click)="removeFramework(i)">Remove</button>
+    </li>
+  </ul>
+</div>
