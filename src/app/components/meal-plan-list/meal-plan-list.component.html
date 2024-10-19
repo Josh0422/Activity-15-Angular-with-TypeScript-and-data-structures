@@ -1,0 +1,39 @@
+<div class="container">
+  <h2>Meal Plan</h2>
+
+
+  <select [(ngModel)]="newMealDay" class="input-field">
+    <option value="" disabled selected>Select a day</option>
+    <option *ngFor="let day of daysOfWeek" [value]="day">{{ day }}</option>
+  </select>
+  <input
+    type="text"
+    [(ngModel)]="newMealName"
+    placeholder="Meal name"
+    class="input-field"
+  />
+
+  <button (click)="addMeal()" class="btn-add">Add Meal</button>
+
+
+  <h3>Search Meals</h3>
+  <input
+    type="text"
+    [(ngModel)]="searchKeyword"
+    placeholder="Search by day or meal name"
+    class="input-field"
+  />
+  <button (click)="searchMeal()" class="btn-search">Search</button>
+  <button (click)="clearSearch()" class="btn-clear-search">Clear Search</button>
+
+
+  <ul class="meal-plan-list">
+    <li *ngFor="let meal of searchResults; let i = index" class="meal-item">
+      {{ meal.day }} - {{ meal.mealName }}
+      <button (click)="removeMeal(i)" class="btn-remove">Remove</button>
+    </li>
+  </ul>
+
+  <!-- Clear all meals button -->
+  <button (click)="clearAllMeals()" class="btn-clear">Clear All</button>
+</div>
