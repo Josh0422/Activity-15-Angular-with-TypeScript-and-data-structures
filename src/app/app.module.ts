@@ -51,11 +51,11 @@ import {ExerciseListComponent} from './components/exercise-list/exercise-list.co
 import {MealPlanListComponent} from './components/meal-plan-list/meal-plan-list.component';
 import {BudgetListComponent} from './components/budget-list/budget-list.component';
 import {PresentationListComponent} from './components/presentation-list/presentation-list.component';
-import {TourListComponent} from './components/tour-list/tour-list.component';
 import {EventListComponent} from './components/event-list/event-list.component';
 import {DeveloperToolsListComponent} from './components/developer-tools-list/developer-tools-list.component';
 import {FrameworkListComponent} from './components/framework-list/framework-list.component';
 import {LibraryListComponent} from './components/library-list/library-list.component';
+import {TourListComponent} from './components/tour-list/tour-list.component';
 
 
 
