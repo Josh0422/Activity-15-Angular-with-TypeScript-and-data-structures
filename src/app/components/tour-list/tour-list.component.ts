@@ -15,10 +15,9 @@ export class TourListComponent {
   tourList: TourDate[] = [
     { city: 'Caloocan City', date: '2024-11-20' },
     { city: 'Batangas', date: '2024-12-05' },
-    { city: 'Quezon City', date: '2024-12-15' }
+    { city: 'Quezon city', date: '2024-12-15' }
   ];
 
- s
   newCity: string = '';
   newDate: string = '';
   searchKeyword: string = '';
